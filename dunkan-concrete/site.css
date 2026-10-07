@@ -496,7 +496,7 @@ strong { font-weight: 600; }
   padding: clamp(1.8rem, 3vw, 2.6rem) clamp(1.4rem, 3vw, 2.6rem) 1.4rem;
   background: var(--pf-dark); color: #F3F1EC; border-radius: var(--pf-r) var(--pf-r) 0 0; font-size: var(--sc-t-sm);
 }
-.foot__brand { display: flex; align-items: center; gap: 0.7rem; font-family: var(--sc-font-display); font-size: 1.2rem; letter-spacing: -0.02em; }
+.foot__brand { display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem; font-family: var(--sc-font-display); font-size: 1.2rem; letter-spacing: -0.02em; }
 .foot__col { display: grid; gap: 0.35rem; align-content: start; }
 .foot__col h3 { margin: 0 0 0.3rem; font-weight: 600; font-size: var(--sc-t-xs); letter-spacing: 0.1em; text-transform: uppercase; color: #BBBFC4; }
 .foot__col a { text-decoration: none; }
@@ -558,3 +558,9 @@ strong { font-weight: 600; }
   .dlg[open] { animation: none; }
   .turn__edge { display: none; }
 }
+
+.foot__memorial { flex-basis: 100%; margin: 0.9rem 0 0; display: flex; align-items: center; gap: 0.9rem; }
+.foot__memorial img { width: clamp(76px, 7vw, 96px); height: auto; border-radius: 0.6rem; box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.16); }
+.foot__memorial figcaption { display: grid; gap: 0.15rem; font-family: var(--sc-font-text); font-size: var(--sc-t-sm); letter-spacing: 0; }
+.foot__memorial figcaption strong { font-weight: 600; }
+.foot__memorial figcaption span { color: #BBBFC4; font-size: var(--sc-t-xs); white-space: nowrap; }
