@@ -120,8 +120,20 @@ strong { font-weight: 600; }
 @media (max-width: 640px) {
   .bar__phone span { display: none; }
   .bar__phone { width: 2.5rem; height: 2.5rem; padding: 0; justify-content: center; background: hsl(215 20% 12% / 0.07); }
-  .bar__name { max-width: 9.5rem; font-size: 0.95rem; }
+  .bar__name { max-width: none; font-size: 0.95rem; }
+  .bar { gap: 0.4rem; padding-left: 1rem; }
+  .bar__brand { flex-shrink: 0; }
+  .bar__actions { gap: 0.25rem; }
+  .bar__actions .btn--sm { padding-inline: 0.85rem; }
 }
+@media (max-width: 420px) {
+  .bar { padding: 0 0.4rem 0 0.9rem; }
+  .bar__name { font-size: 0.9rem; }
+  .bar__phone { width: 2.1rem; height: 2.1rem; }
+  .bar__menu { width: 2.1rem; height: 2.1rem; }
+  .bar__actions .btn--sm { padding-inline: 0.7rem; font-size: 0.82rem; }
+}
+@media (max-width: 350px) { .bar__brand { flex-shrink: 1; } .bar__name { font-size: 0.82rem; } }
 
 /* the pour clock */
 .tag {
