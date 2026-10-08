@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Designer’s Choice Custom Homes · Custom homes in Buckeye, Arizona</title>
+<meta name="description" content="Custom homes built on your lot across the Greater West Valley of Arizona, since 1982. Meetings with Alex Carroll by appointment. ROC License #088777B.">
+<meta name="theme-color" content="#0b0a09">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Designer’s Choice Custom Homes, Inc.">
+<meta property="og:description" content="Built from dirt. Built as if it were our own. Custom homes in the Greater West Valley, Arizona.">
+<meta property="og:image" content="assets/s8.webp">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%230b0a09'/><path d='M9 26V14a7 7 0 0 1 14 0v12' fill='none' stroke='%23d5b05c' stroke-width='2'/><path d='M13.5 26V15a2.5 2.5 0 0 1 5 0v11' fill='none' stroke='%23d5b05c' stroke-width='1.4'/></svg>">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Marcellus&display=swap">
+<link rel="preload" as="image" href="assets/s0.webp" media="(min-aspect-ratio: 1/1)">
+<link rel="preload" as="image" href="assets/m0.webp" media="(max-aspect-ratio: 1/1)">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#close">Skip to contact</a>
+
+<!-- THE WORLD: one fixed stage. Ten stages of one lot, same camera. -->
+<div class="world" aria-hidden="true">
+  <div class="cam" id="cam">
+    <picture class="layer"><img src="assets/s0.webp" alt="" width="2400" height="1350" decoding="async" fetchpriority="high"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <div class="haze" id="haze"></div>
+    <div class="glow" id="glow"></div>
+    <div class="warm" id="warm"></div>
+    <div class="level" id="level"><i></i></div>
+  </div>
+  <div class="fg" id="fg">
+    <img class="fg__l" src="assets/fg-l.webp" alt="" width="605" height="1400" decoding="async">
+    <img class="fg__r" src="assets/fg-r.webp" alt="" width="655" height="1400" decoding="async">
+  </div>
+  <canvas id="dust"></canvas>
+  <div class="scrim"></div>
+  <div class="grain"></div>
+</div>
+
+<header class="bar">
+  <a class="brand" href="#top" aria-label="Designer’s Choice Custom Homes, Inc., back to the start">
+    <svg viewBox="0 0 34 40" aria-hidden="true" fill="none" stroke="#d5b05c">
+      <path d="M3 38V17a14 14 0 0 1 28 0v21" stroke-width="2"/>
+      <path d="M9.5 38V18.5a7.5 7.5 0 0 1 15 0V38" stroke-width="1.5"/>
+      <path d="M17 12v26M13 20.5h8" stroke-width="1" opacity=".55"/>
+      <path d="M0 38h34" stroke-width="1.5"/>
+    </svg>
+    <span><span class="brand__name">Designer’s Choice</span><span class="brand__sub">Custom Homes, Inc.</span></span>
+  </a>
+  <nav class="bar__nav" aria-label="Explore">
+    <button class="link" type="button" data-open="gallery">Gallery</button>
+    <button class="link" type="button" data-open="plans">Plans</button>
+    <button class="link" type="button" data-open="features">Features</button>
+    <a class="link bar__call" href="tel:+16022914065">602-291-4065</a>
+  </nav>
+  <a class="btn btn--gold" href="#close" data-go="close">Meet with Alex</a>
+  <a class="link bar__callm" href="tel:+16022914065" aria-label="Call 602-291-4065">Call</a>
+  <button class="link bar__menu" type="button" data-open="menu" aria-label="Open menu">Menu</button>
+</header>
+
+<aside class="pole" id="pole" aria-label="Build stages">
+  <p class="pole__head"><span class="off-signed">Job card</span><span class="on-signed">Signed off</span></p>
+  <ol class="pole__list" id="poleList">
+    <li class="pole__fill-wrap" aria-hidden="true" style="display:contents"><span class="pole__fill" id="poleFill"></span></li>
+    <li><button class="pole__row" type="button" data-stage="0"><span class="pole__stamp"></span><span class="pole__label">Your lot</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="1"><span class="pole__stamp"></span><span class="pole__label">Dirt work</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="2"><span class="pole__stamp"></span><span class="pole__label">Footings</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="3"><span class="pole__stamp"></span><span class="pole__label">Plumbing</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="4"><span class="pole__stamp"></span><span class="pole__label">The slab</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="5"><span class="pole__stamp"></span><span class="pole__label">Framing</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="6"><span class="pole__stamp"></span><span class="pole__label">Roof trusses</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="7"><span class="pole__stamp"></span><span class="pole__label">Tile roof</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="8"><span class="pole__stamp"></span><span class="pole__label">Stucco and glass</span></button></li>
+    <li><button class="pole__row" type="button" data-stage="9"><span class="pole__stamp"></span><span class="pole__label">Home</span></button></li>
+  </ol>
+</aside>
+
+<p class="sr" id="live" aria-live="polite"></p>
+
+<main id="top" class="copy-layer">
+  <section class="beat beat--hero" data-beat="0" aria-labelledby="h-hero">
+    <h1 id="h-hero">Built from dirt.<br>Built as if it were our own.</h1>
+    <p>Custom homes on your lot, anywhere in the Greater West Valley. Building since 1982.</p>
+    <div class="beat__cta"><a class="btn btn--gold" href="#close" data-go="close">Meet with Alex</a></div>
+  </section>
+
+  <section class="beat" data-beat="1" aria-labelledby="h-dirt">
+    <h2 id="h-dirt">It starts with the land.</h2>
+    <p>We build on your lot, so the pad is cut and compacted to your plan before anything else goes in. Buckeye, Goodyear, Surprise, Estrella Mountain Ranch, Rainbow Valley.</p>
+  </section>
+
+  <section class="beat" data-beat="2" aria-labelledby="h-foot">
+    <h2 id="h-foot">Everything stands on this.</h2>
+    <p>Forms, rebar and footings go in square to the plan. Alex takes his clients’ calls himself and welcomes a walk-through at any stage.</p>
+  </section>
+
+  <section class="beat" data-beat="3" aria-labelledby="h-plumb">
+    <h2 id="h-plumb">Before the concrete, the plumbing.</h2>
+    <p>Drain lines and soft water loops go in under the slab first. Soft water loops come standard on every model.</p>
+  </section>
+
+  <section class="beat" data-beat="4" aria-labelledby="h-slab">
+    <h2 id="h-slab">The slab.</h2>
+    <p>Everything above it depends on it.</p>
+  </section>
+
+  <section class="beat" data-beat="5" aria-labelledby="h-frame">
+    <h2 id="h-frame">Walls go up.</h2>
+    <p>2×6 exterior walls insulated with 5½ inches of cellulose, and ceilings you choose: 10 feet, 12 feet or vaulted.</p>
+  </section>
+
+  <section class="beat" data-beat="6" aria-labelledby="h-truss">
+    <h2 id="h-truss">Then the roof.</h2>
+    <p>Trusses and sheathing close the shell. R-38 cellulose insulation goes into the ceiling.</p>
+  </section>
+
+  <section class="beat" data-beat="7" aria-labelledby="h-tile">
+    <h2 id="h-tile">Tile, in your color.</h2>
+    <p>Color-thru roof tile in the color you choose, set in the Arizona sun.</p>
+  </section>
+
+  <section class="beat" data-beat="8" aria-labelledby="h-skin">
+    <h2 id="h-skin">Stucco, glass, and a door worth walking through.</h2>
+    <p>Synthetic stucco, dual-pane low-E windows and a custom 3′6″ × 8′ front door. The cabinets come from our own shop, Designer’s Choice Custom Cabinets.</p>
+  </section>
+
+  <section class="beat beat--close" id="close" data-beat="9" aria-labelledby="h-close" tabindex="-1">
+    <h2 id="h-close">Your lot is next.</h2>
+    <p>Meetings with Alex Carroll are by appointment. Call to set one up.</p>
+    <div class="close__actions">
+      <a class="btn btn--gold" href="tel:+16022914065">Meet with Alex</a>
+      <a class="close__phone" href="tel:+16022914065">602-291-4065</a>
+    </div>
+    <address>
+      19527 W. Ramos Ln., Buckeye, AZ 85326 ·
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=19527+W+Ramos+Ln+Buckeye+AZ+85326" target="_blank" rel="noopener">Directions</a>
+    </address>
+    <p class="signedline" id="signedline">Every stage walked. Signed off.</p>
+    <p class="legal">Designer’s Choice Custom Homes, Inc. · ROC License #088777B · ©2026</p>
+  </section>
+</main>
+
+<div id="spacer" aria-hidden="true"></div>
+
+<!-- ------------------------------------------------------------ drawers -->
+
+<dialog class="drawer" id="drawer-gallery" aria-labelledby="t-gallery">
+  <div class="drawer__top">
+    <h2 class="drawer__title" id="t-gallery">Gallery</h2>
+    <button class="drawer__close" type="button" data-close aria-label="Close gallery"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l12 12M16 4 4 16"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <p class="drawer__lede">Homes built by Designer’s Choice across the West Valley. Select a photo to enlarge it.</p>
+    <div class="gallery" id="gallery"></div>
+    <p class="drawer__src">Photos from the Designer’s Choice Custom Homes, Inc. Facebook page.</p>
+  </div>
+</dialog>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button class="lightbox__btn lightbox__x drawer__close" type="button" data-lb="close" aria-label="Close photo"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l12 12M16 4 4 16"/></svg></button>
+  <button class="lightbox__btn lightbox__btn--prev" type="button" data-lb="prev" aria-label="Previous photo"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12.5 4 6.5 10l6 6"/></svg></button>
+  <img id="lbImg" alt="">
+  <button class="lightbox__btn lightbox__btn--next" type="button" data-lb="next" aria-label="Next photo"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7.5 4l6 6-6 6"/></svg></button>
+  <p class="lightbox__cap" id="lbCap"></p>
+</dialog>
+
+<dialog class="drawer" id="drawer-plans" aria-labelledby="t-plans">
+  <div class="drawer__top">
+    <h2 class="drawer__title" id="t-plans">Floor plans</h2>
+    <button class="drawer__close" type="button" data-close aria-label="Close floor plans"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l12 12M16 4 4 16"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <p class="drawer__lede">Alex has built a few hundred homes and has hundreds of floor plans. Start with one of these or bring your own idea. Each plan opens at dcchi.com.</p>
+    <form class="filters" id="filters" onsubmit="return false">
+      <label class="field">Size<select id="f-size">
+        <option value="">Any size</option>
+        <option value="0-2500">Up to 2,500 sq ft</option>
+        <option value="2500-3000">2,500 to 3,000 sq ft</option>
+        <option value="3000-3500">3,000 to 3,500 sq ft</option>
+        <option value="3500-4000">3,500 to 4,000 sq ft</option>
+        <option value="4000-99999">Above 4,000 sq ft</option>
+        <option value="small">Casitas</option>
+        <option value="garage">Detached garages</option>
+      </select></label>
+      <label class="field">Bedrooms<select id="f-beds">
+        <option value="">Any</option><option value="3">3 or more</option><option value="4">4 or more</option><option value="5">5 or more</option>
+      </select></label>
+      <label class="field">Bathrooms<select id="f-baths">
+        <option value="">Any</option><option value="2">2 or more</option><option value="3">3 or more</option><option value="4">4 or more</option>
+      </select></label>
+      <label class="field">Garage stalls<select id="f-gar">
+        <option value="">Any</option><option value="2">2 or more</option><option value="3">3 or more</option><option value="4">4 or more</option>
+      </select></label>
+    </form>
+    <p class="plans__count" id="plansCount" aria-live="polite"></p>
+    <ul class="plans__list" id="plansList"></ul>
+    <p class="drawer__src">Plan list copied from dcchi.com. A plan is a starting point: every home is customized.</p>
+  </div>
+</dialog>
+
+<dialog class="drawer" id="drawer-features" aria-labelledby="t-features">
+  <div class="drawer__top">
+    <h2 class="drawer__title" id="t-features">Standard features</h2>
+    <button class="drawer__close" type="button" data-close aria-label="Close features"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l12 12M16 4 4 16"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <p class="drawer__lede">What comes with a Designer’s Choice home. Many of these you help design or choose.</p>
+    <div class="feat">
+      <section><h3>Exterior</h3><ul>
+        <li>Custom exterior you help design</li><li>Synthetic stucco exterior</li><li>8′ high garage doors with automatic openers</li>
+        <li>Large covered patios</li><li>Color-thru roof tile, your color choice</li><li>Custom exterior lighting that you pick</li>
+        <li>3′6″ × 8′ custom front door</li><li>Dual-pane low-E windows with thermal break, in standard colors</li>
+        <li>Flood lights on the rear of the house</li><li>Weatherproof receptacles and hose bibs on all sides</li>
+        <li>2×6 exterior walls with 5½″ cellulose insulation</li><li>R-38 cellulose insulation in the ceiling</li></ul></section>
+      <section><h3>Interior</h3><ul>
+        <li>Dramatic 10′, 12′ or vaulted ceilings, your choice</li><li>Propane fireplace you help design</li><li>Entertainment center you help design</li>
+        <li>Travertine stone in the entry, kitchen, baths, halls, utility and walkways</li><li>Ceiling fans in bedrooms, den, living and family room</li>
+        <li>Soft water loops on all models</li><li>Round drywall corners</li><li>Large linen closet and spacious closets with shelves and rods</li>
+        <li>Copper wiring in all circuits</li><li>Wired for television, telephone, network and security (surround sound optional)</li>
+        <li>Insulated sound walls between living areas and bedrooms or baths</li><li>Custom light fixtures that you pick</li><li>75 gallon water heater</li></ul></section>
+      <section><h3>Kitchen</h3><ul>
+        <li>Custom cabinets with your choice of wood and door style, built by Designer’s Choice Custom Cabinets, Inc.</li>
+        <li>Granite countertops in your choice of color</li><li>Cast iron double bowl sink with one-touch sprayer</li><li>Heavy duty ½ HP disposal</li>
+        <li>Double wall oven (self-cleaning) and cooktop</li><li>Space-saver microwave and heavy duty dishwasher</li>
+        <li>Water line for refrigerator icemaker with R.O. loop</li><li>Walk-in pantry (most models)</li><li>Recessed lighting</li></ul></section>
+      <section><h3>Master suite</h3><ul>
+        <li>Large 2-person garden tub</li><li>Custom cabinets, choice of wood and door style</li><li>Wood-framed beveled mirrors and mirrored medicine cabinet</li>
+        <li>Double cast iron sinks with travertine stone vanity tops</li><li>Moen or Delta fixtures, your choice of styles</li>
+        <li>2-person shower with double valves and glass doors (wraparound optional)</li><li>Private water closet room</li></ul></section>
+      <section><h3>Bathrooms</h3><ul>
+        <li>Cast iron tub with travertine stone surround</li><li>Custom cabinets, choice of wood and door style</li><li>Cast iron sinks with travertine vanity tops</li>
+        <li>Elongated water closets</li><li>Moen or Delta fixtures, your choice of styles</li><li>Exhaust fans</li></ul></section>
+      <section><h3>Laundry</h3><ul>
+        <li>Laundry sink</li><li>Convenient shelving above washer and dryer</li><li>Fluorescent lighting</li></ul></section>
+    </div>
+    <p class="drawer__src">Features list from dcchi.com.</p>
+  </div>
+</dialog>
+
+<dialog class="drawer" id="drawer-menu" aria-labelledby="t-menu">
+  <div class="drawer__top">
+    <h2 class="drawer__title" id="t-menu">Menu</h2>
+    <button class="drawer__close" type="button" data-close aria-label="Close menu"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l12 12M16 4 4 16"/></svg></button>
+  </div>
+  <div class="drawer__body menu">
+    <button class="menu__item" type="button" data-open="gallery">Gallery</button>
+    <button class="menu__item" type="button" data-open="plans">Plans</button>
+    <button class="menu__item" type="button" data-open="features">Features</button>
+    <a href="#close" data-go="close">Meet with Alex</a>
+    <a href="tel:+16022914065">602-291-4065</a>
+  </div>
+</dialog>
+
+<noscript><p style="position:relative;z-index:30;padding:1rem var(--gutter);background:#14110e;color:#f4ecde">Designer’s Choice Custom Homes, Inc. · 19527 W. Ramos Ln., Buckeye, AZ 85326 · <a href="tel:+16022914065">602-291-4065</a> · ROC License #088777B</p></noscript>
+
+<script src="plans.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
