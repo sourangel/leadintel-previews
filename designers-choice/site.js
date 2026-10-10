@@ -19,25 +19,30 @@
   let fine = mqFine.matches;
 
   /* ------------------------------------------------------------ timeline
-     Units are viewport heights of scroll. Stage i is held for HOLD[i], then
-     leg i carries the world from stage i to stage i + 1. The last leg is the
-     peak: the finished house going from afternoon to sunset. */
-  const LEG = 0.85;
-  const DUSK = 1.8;
-  const HOLD = [0.9, 0.28, 0.28, 0.28, 0.28, 0.28, 0.28, 0.28, 0.4, 1.3];
-  const LEN = [LEG, LEG, LEG, LEG, LEG, LEG, LEG, LEG, DUSK];
-  const N = HOLD.length;
-  const holdStart = [], legStart = [];
+     Units are viewport heights of scroll. Stage 0 (the bare lot) is held, then
+     legs 0 to 7 build stages 1 to 8 under the gold level line (stills that are
+     edits of one another). Leg 8 is the drone lift: a real clip scrubbed by the
+     wheel that rises over the finished house and reveals the backyard. Leg 9
+     is the sunset dissolve, the peak, followed by the closing hold. */
+  const LEG = 0.85, LIFT = 2.3, DUSK = 1.7;
+  const HOLD = [0.9, 0.28, 0.28, 0.28, 0.28, 0.28, 0.28, 0.28, 0.5, 0.12];   // before leg i
+  const LEN = [LEG, LEG, LEG, LEG, LEG, LEG, LEG, LEG, LIFT, DUSK];
+  const END_HOLD = 1.3;
+  const NL = LEN.length;            // 10 legs
+  const N = 10;                     // 10 pole stages (0 to 9)
+  const holdStart = [], legStart = [], legEnd = [];
   let total = 0;
-  for (let i = 0; i < N; i++) {
+  for (let i = 0; i < NL; i++) {
     holdStart[i] = total; total += HOLD[i];
-    if (i < N - 1) { legStart[i] = total; total += LEN[i]; }
+    legStart[i] = total; total += LEN[i]; legEnd[i] = total;
   }
-  const STAGE_NAMES = ['Your lot', 'Dirt work', 'Footings', 'Plumbing', 'The slab', 'Framing', 'Roof trusses', 'Tile roof', 'Stucco and glass', 'Home'];
+  total += END_HOLD;
+  const STAGE_NAMES = ['Your lot', 'Dirt work', 'Footings', 'Plumbing', 'The slab', 'Framing', 'Roof trusses', 'Tile roof', 'Stucco and finishes', 'Home'];
 
   /* ------------------------------------------------------------- elements */
   const cam = $('#cam');
-  const layers = $$('.layer');
+  const layers = $$('.layer:not(.layer--video)');
+  const vid = $('#lift');
   const imgs = layers.map((l) => $('img', l));
   const level = $('#level');
   const haze = $('#haze');
@@ -56,14 +61,18 @@
 
   /* ---------------------------------------------------------- image sets */
   let setKey = '';
+  let vidSrc = 'assets/lift.mp4';
   function pickSet() {
     const key = mqPortrait.matches ? 'm' : 's';
     if (key === setKey) return;
     setKey = key;
     imgs.forEach((img, i) => {
-      const src = `assets/${key}${i}.webp`;
+      const src = `assets/${key}${layers[i].dataset.n}.webp`;
       if (img.getAttribute('src') !== src) img.setAttribute('src', src);
+      layers[i].style.setProperty('--bg', `url(${src})`);
     });
+    vidSrc = key === 's' ? 'assets/lift.mp4' : 'assets/lift-m.mp4';
+    if (vid && vid.dataset.loaded) { vid.dataset.loaded = ''; vidLoad(); }
   }
   pickSet();
   mqPortrait.addEventListener('change', pickSet);
@@ -90,21 +99,25 @@
     vh = innerHeight || document.documentElement.clientHeight || 800;
     vw = innerWidth || document.documentElement.clientWidth || 1280;
     spacer.style.height = Math.round((total + 1) * vh) + 'px';
+    // empty band above/below a contained 9:16 still on tall phones (see site.css)
+    const gap = Math.max(0, 1 - (vw / 0.5625) / vh) * 100;
+    root.style.setProperty('--gt', (gap * 0.74).toFixed(2) + '%');
+    root.style.setProperty('--gb', (gap * 0.26).toFixed(2) + '%');
     target = scrollY / vh;
   }
 
   /* ------------------------------------------------------------- beat windows
      Copy is windowed against the whole track: it ramps in, holds on a plateau,
      ramps out. The only transform is a drift capped at 4vh across the window. */
+  const NB = beats.length;                       // 11: hero, 8 build beats, backyard, close
   const wins = beats.map((el, i) => {
-    let from, to, rIn = 0.16, rOut = 0.16;
-    if (i === 0) { from = 0; to = legStart[0] + 0.34 * LEG; rIn = 0; rOut = 0.3; }
-    else if (i < 9) {
-      from = legStart[i - 1] + 0.4 * LEN[i - 1];
-      to = i < 8 ? legStart[i] + 0.2 * LEG : legStart[8] + 0.3;
-    } else { from = legStart[8] + 1.22; to = total + 0.01; rIn = 0.45; rOut = 0; }
-    const len = to - from;
-    return { el, from, to, rIn, rOut, len, rInV: i === 9 ? 0.34 : (i === 0 ? 0 : 0.17), rOutV: i === 0 ? 0.2 : (i === 9 ? 0 : 0.17), state: -1, last: -1 };
+    let from, to, rInV = 0.17, rOutV = 0.17;
+    if (i === 0) { from = 0; to = legStart[0] + 0.34 * LEG; rInV = 0; rOutV = 0.2; }
+    else if (i <= 7) { from = legStart[i - 1] + 0.4 * LEG; to = legStart[i] + 0.2 * LEG; }
+    else if (i === 8) { from = legStart[7] + 0.4 * LEG; to = legStart[8] + 0.12 * LIFT; }
+    else if (i === 9) { from = legStart[8] + 0.52 * LIFT; to = legEnd[8] + 0.18; }
+    else { from = legStart[9] + 0.5 * DUSK; to = total + 0.01; rInV = 0.34; rOutV = 0; }
+    return { el, from, to, len: to - from, rInV, rOutV, state: -1, last: -1 };
   });
 
   function renderBeats(t) {
@@ -115,7 +128,7 @@
       else if (t <= w.to - w.rOutV) v = 1;
       else v = w.rOutV ? smooth(1 - (t - (w.to - w.rOutV)) / w.rOutV) : 1;
       if (t > w.to) v = 0;
-      if (w.el === beats[9] && t >= w.from) v = Math.max(v, smooth((t - w.from) / 0.34));
+      if (w.el === beats[NB - 1] && t >= w.from) v = Math.max(v, smooth((t - w.from) / 0.34));
       v = clamp(v);
       const wp = clamp((t - w.from) / w.len);
       const dy = reduce ? 0 : (0.5 - wp) * 4;
@@ -123,7 +136,7 @@
       if (key !== w.last) {
         w.last = key;
         w.el.style.opacity = v.toFixed(3);
-        w.el.style.transform = reduce || w.el === beats[9] ? 'none' : `translate3d(0, ${dy.toFixed(2)}vh, 0)`;
+        w.el.style.transform = reduce || w.el === beats[NB - 1] ? 'none' : `translate3d(0, ${dy.toFixed(2)}vh, 0)`;
       }
       const on = v > 0.5;
       if (on !== (w.state === 1)) {
@@ -146,30 +159,78 @@
     el.style.clipPath = clip;
   }
 
+  /* the drone clip loads when the visitor is close, never before */
+  let vidState = 'idle';   // idle | loading | ready | failed
+  function vidLoad() {
+    if (!vid || vidState === 'loading' || vidState === 'ready' || reduce) return;
+    vidState = 'loading';
+    vid.muted = true; vid.playsInline = true; vid.preload = 'auto';
+    vid.addEventListener('loadeddata', () => { vidState = 'ready'; vid.dataset.loaded = '1'; vidLast = -1; kick(); }, { once: true });
+    vid.addEventListener('error', () => { vidState = 'failed'; }, { once: true });
+    vid.src = vidSrc;
+    vid.load();
+  }
+  let vidLast = -1;
+  function vidSeek(p) {
+    if (vidState !== 'ready' || !vid.duration) return;
+    const tt = clamp(p) * (vid.duration - 0.04);
+    if (Math.abs(tt - vidLast) < 0.012) return;
+    vidLast = tt;
+    try { vid.currentTime = tt; } catch (e) {}
+  }
+  const vidStyle = { v: '', o: '' };
+  function setVid(show, op) {
+    const v = show ? 'visible' : 'hidden', o = op.toFixed(3);
+    if (v !== vidStyle.v) { vid.style.visibility = v; vidStyle.v = v; }
+    if (o !== vidStyle.o) { vid.style.opacity = o; vidStyle.o = o; }
+  }
+
   function renderWorld(t) {
-    // which leg are we in, and how far
     let k = -1;
-    for (let i = 0; i < N - 1; i++) if (t >= legStart[i]) k = i;
+    for (let i = 0; i < NL; i++) if (t >= legStart[i]) k = i;
     const p = k < 0 ? 0 : clamp((t - legStart[k]) / LEN[k]);
     const inFlight = k >= 0 && p < 1;
-    // stage j is the newest one completely revealed; leg j builds stage j + 1
-    const revealed = k < 0 ? 0 : (inFlight ? k : k + 1);
     let lineY = -1, lineOp = 0;
 
-    for (let j = 0; j < N; j++) {
-      if (j < revealed) setLayer(j, false, 1, 'none');
-      else if (j === revealed) setLayer(j, true, 1, 'none');
-      else if (j === revealed + 1 && inFlight) {
-        if (k === N - 2 || reduce) {
-          // dusk is a slow dissolve; reduced motion dissolves every stage
-          setLayer(j, true, (k === N - 2 ? smooth((p - 0.08) / 0.8) : smooth(p)).toFixed(3), 'none');
-        } else {
-          const top = (1 - sine(p)) * 100;
-          setLayer(j, true, 1, 'inset(' + top.toFixed(3) + '% 0 0 0)');
-          lineY = top / 100 * vh;
-          lineOp = clamp(Math.min(p / 0.05, (1 - p) / 0.05));
-        }
-      } else setLayer(j, false, 1, 'none');
+    if (t > legStart[7] - 2.4) vidLoad();
+
+    if (k <= 7) {
+      // build legs: stage j is the newest one fully revealed; leg j builds stage j + 1
+      const revealed = k < 0 ? 0 : (inFlight ? k : k + 1);
+      for (let j = 0; j < 11; j++) {
+        if (j > 8) setLayer(j, false, 1, 'none');
+        else if (j < revealed) setLayer(j, false, 1, 'none');
+        else if (j === revealed) setLayer(j, true, 1, 'none');
+        else if (j === revealed + 1 && inFlight) {
+          if (reduce) setLayer(j, true, smooth(p).toFixed(3), 'none');
+          else {
+            const top = (1 - sine(p)) * 100;
+            setLayer(j, true, 1, 'inset(' + top.toFixed(3) + '% 0 0 0)');
+            lineY = top / 100 * vh;
+            lineOp = clamp(Math.min(p / 0.05, (1 - p) / 0.05));
+          }
+        } else setLayer(j, false, 1, 'none');
+      }
+      setVid(false, 0);
+    } else if (k === 8) {
+      // the lift: a real clip under the wheel, with the stills catching both ends
+      for (let j = 0; j < 9; j++) setLayer(j, j === 8 && p < 1, 1, 'none');
+      const useClip = !reduce && vidState === 'ready';
+      if (useClip) {
+        vidSeek(p);
+        setVid(p > 0.004 && p < 1, smooth(p / 0.035));
+        setLayer(9, p > 0.94, smooth((p - 0.94) / 0.06).toFixed(3), 'none');
+      } else {
+        setVid(false, 0);
+        setLayer(9, p > 0, smooth(p).toFixed(3), 'none');
+      }
+      setLayer(10, false, 1, 'none');
+      if (p >= 1) setLayer(8, false, 1, 'none');
+    } else {
+      for (let j = 0; j < 9; j++) setLayer(j, false, 1, 'none');
+      setVid(false, 0);
+      setLayer(9, p < 1, 1, 'none');
+      setLayer(10, p > 0, (p >= 1 ? 1 : smooth((p - 0.04) / 0.9)).toFixed(3), 'none');
     }
 
     if (lineY >= 0) {
@@ -179,20 +240,15 @@
       level.style.opacity = '0';
     }
 
-    // dusk glow peaks as the sun meets the ridge
-    const dp = k === N - 2 ? p : (k > N - 2 ? 1 : 0);
-    const gl = dp <= 0 ? 0 : smooth((dp - 0.35) / 0.4) * (1 - smooth((dp - 0.9) / 0.1) * 0.6);
-    glow.style.opacity = reduce ? '0' : gl.toFixed(3);
-    warmEl.style.opacity = reduce ? '0' : (k === N - 2 ? Math.sin(Math.PI * p) * 0.9 : 0).toFixed(3);
-
+    warmEl.style.opacity = reduce ? '0' : (k === 9 ? Math.sin(Math.PI * p) * 0.55 : 0).toFixed(3);
     return { k, p };
   }
 
   /* -------------------------------------------------------- camera + depth */
   let px = 0, py = 0, tpx = 0, tpy = 0;
   function renderCamera(t) {
-    const prog = clamp(t / total);
-    const s = reduce ? 1 : 1 + 0.065 * prog;
+    const prog = clamp(t / legEnd[7]);
+    const s = reduce ? 1 : 1 + 0.045 * prog;
     const x = reduce ? 0 : px * -10;
     const y = reduce ? 0 : py * -6;
     cam.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) scale(${s.toFixed(4)})`;
@@ -217,18 +273,18 @@
     if (t < legStart[0]) amt = 0.28 + 0.22 * (t / legStart[0]);
     else if (t < legStart[1]) amt = 0.5 + 0.5 * Math.sin(clamp((t - legStart[0]) / LEG) * Math.PI);
     else if (t < legStart[3]) amt = 0.5 * (1 - smooth((t - legStart[1]) / (legStart[3] - legStart[1]))) + 0.2;
-    else amt = 0.2;
+    else amt = t < legStart[8] ? 0.2 : 0.1;
     dust.amt = amt;
-    dust.dusk = t > legStart[8] ? clamp((t - legStart[8]) / DUSK) : 0;
+    dust.dusk = t > legStart[9] ? clamp((t - legStart[9]) / DUSK) : 0;
     haze.style.opacity = reduce ? '0' : (Math.max(0, amt - 0.22) * 0.9).toFixed(3);
   }
 
   /* ------------------------------------------------------------------ pole */
   let curStage = -1;
   function renderPole(t, k, p) {
-    // stage j is stamped when the leg that built it has completed
+    // stage j (1 to 8) is stamped when the leg that built it completes; Home when the lift lands
     let stamped = 0;
-    for (let j = 1; j < N; j++) if (t >= holdStart[j] - 0.0001) stamped = j;
+    for (let j = 1; j < N; j++) if (t >= legEnd[j - 1] - 0.0001) stamped = j;
     let now = 0;
     for (let j = 1; j < N; j++) if (t >= legStart[j - 1] + 0.5 * LEN[j - 1]) now = j;
     const s = k < 0 ? 0 : Math.min(N - 1, k + p);
@@ -245,7 +301,7 @@
       }
       if (isDone) row.setAttribute('aria-current', j === now ? 'step' : 'false'); else row.removeAttribute('aria-current');
     });
-    pole.classList.toggle('is-signed', stamped === N - 1 && t >= holdStart[N - 1] + 0.2);
+    pole.classList.toggle('is-signed', t >= legEnd[9] - 0.25);
     if (now !== curStage) {
       curStage = now;
       live.textContent = STAGE_NAMES[now];
@@ -334,7 +390,7 @@
     const top = Math.max(0, Math.min(t, total)) * vh;
     scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
   }
-  const stageT = (j) => j === 0 ? 0 : holdStart[j] + (j === N - 1 ? 0.45 : HOLD[j] * 0.5);
+  const stageT = (j) => j === 0 ? 0 : (j === N - 1 ? legStart[9] + 0.92 * DUSK : legEnd[j - 1] + 0.12);
   poleRows.forEach((row) => row.addEventListener('click', () => {
     goTo(stageT(+row.dataset.stage));
     row.classList.add('is-peek');

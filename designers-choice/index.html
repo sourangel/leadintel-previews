@@ -25,16 +25,18 @@
 <!-- THE WORLD: one fixed stage. Ten stages of one lot, same camera. -->
 <div class="world" aria-hidden="true">
   <div class="cam" id="cam">
-    <picture class="layer"><img src="assets/s0.webp" alt="" width="2400" height="1350" decoding="async" fetchpriority="high"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
-    <picture class="layer"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="0"><img src="assets/s0.webp" alt="" width="2400" height="1350" decoding="async" fetchpriority="high"></picture>
+    <picture class="layer" data-n="1"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="2"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="3"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="4"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="5"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="6"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="7"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="8"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <video class="layer layer--video" id="lift" muted playsinline preload="none" aria-hidden="true" tabindex="-1" disablepictureinpicture></video>
+    <picture class="layer" data-n="A"><img alt="" width="2400" height="1350" decoding="async"></picture>
+    <picture class="layer" data-n="9"><img alt="" width="2400" height="1350" decoding="async"></picture>
     <div class="haze" id="haze"></div>
     <div class="glow" id="glow"></div>
     <div class="warm" id="warm"></div>
@@ -136,7 +138,12 @@
     <p>Synthetic stucco, dual-pane low-E windows and a custom 3′6″ × 8′ front door. The cabinets come from our own shop, Designer’s Choice Custom Cabinets.</p>
   </section>
 
-  <section class="beat beat--close" id="close" data-beat="9" aria-labelledby="h-close" tabindex="-1">
+  <section class="beat beat--yard" data-beat="9" aria-labelledby="h-yard">
+    <h2 id="h-yard">Room for the whole lot.</h2>
+    <p>The house is only part of it. Bring Alex your ideas for the yard, the patio and everything outside the door.</p>
+  </section>
+
+  <section class="beat beat--close" id="close" data-beat="10" aria-labelledby="h-close" tabindex="-1">
     <h2 id="h-close">Your lot is next.</h2>
     <p>Meetings with Alex Carroll are by appointment. Call to set one up.</p>
     <div class="close__actions">

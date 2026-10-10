@@ -459,3 +459,24 @@ html:not(.js) .pole, html:not(.js) .bar__nav { display: none; }
 @media (max-width: 860px), (max-aspect-ratio: 1/1) {
   .beat .signedline { display: none !important; }
 }
+
+.layer--video { object-fit: cover; object-position: 50% 58%; width: 100%; height: 100%; visibility: hidden; opacity: 0; background: transparent; }
+.layer--video:not(:first-child) { visibility: hidden; }
+
+/* Tall phones (narrower than the 9:16 stills): show the whole picture width and
+   continue the picture's own edges with a blurred copy behind it, so the house
+   is never cropped at the sides. Wider screens keep a plain cover crop. */
+@media (max-aspect-ratio: 9/16) {
+  .layer { overflow: hidden; }
+  .layer::before {
+    content: ""; position: absolute; inset: -6%;
+    background: var(--bg) 0 0 / 100% 100% no-repeat;
+    filter: blur(28px) saturate(1.05); transform: translateZ(0);
+  }
+  .layer img, .layer--video { position: relative; object-fit: contain; object-position: 50% 74%; }
+  .layer--video::before { content: none; }
+  .layer img, .layer--video {
+    -webkit-mask-image: linear-gradient(to bottom, transparent var(--gt, 0%), #000 calc(var(--gt, 0%) + 7%), #000 calc(100% - var(--gb, 0%) - 4%), transparent calc(100% - var(--gb, 0%)));
+            mask-image: linear-gradient(to bottom, transparent var(--gt, 0%), #000 calc(var(--gt, 0%) + 7%), #000 calc(100% - var(--gb, 0%) - 4%), transparent calc(100% - var(--gb, 0%)));
+  }
+}
