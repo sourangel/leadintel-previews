@@ -1,0 +1,344 @@
+<!doctype html>
+<!--
+  Concrete contractor template, V2 service page. One of these is rendered per
+  entry in business.json "services". Content lives in services[].page.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concrete Patios and Stamped Concrete in Phoenix, AZ | Level Best Concrete</title>
+<meta name="description" content="Level Best Concrete pours plain, colored and stamped concrete patios in the Phoenix valley. Sloped for drainage, sealed for color. Free written estimates.">
+<meta name="robots" content="noindex,nofollow">
+
+<meta name="theme-color" content="#E8E6E1">
+<meta property="og:title" content="Concrete Patios and Stamped Concrete in Phoenix, AZ | Level Best Concrete">
+<meta property="og:description" content="Level Best Concrete pours plain, colored and stamped concrete patios in the Phoenix valley. Sloped for drainage, sealed for color. Free written estimates.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Level Best Concrete">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%23FF5A1F'/><path d='M9 22V10h5.5c3 0 4.5 1.4 4.5 3.6 0 1.5-.8 2.6-2.2 3.1L19.5 22h-3l-2.2-4.6H12V22z' fill='%2316181B'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Geist:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../scrollcraft.css">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--sc-canvas:#E8E6E1;--sc-surface:#F4F3EF;--sc-ink:#16181B;--sc-ink-soft:#4C5258;--sc-accent:#FF5A1F;--sc-accent-ink:#16181B;--pf-dark:#17191C;--sc-font-display:"Bricolage Grotesque", "Geist", system-ui, sans-serif;--sc-font-text:"Geist", system-ui, sans-serif;}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"GeneralContractor","@id":"#business","name":"Level Best Concrete","description":"Level Best Concrete pours foundations, driveways, sidewalks, patios and retaining walls in the Phoenix valley. Free written estimates.","telephone":"(480) 555-0142","email":"hello@levelbestconcrete.example","areaServed":[{"@type":"City","name":"Phoenix"},{"@type":"City","name":"Scottsdale"},{"@type":"City","name":"Tempe"},{"@type":"City","name":"Mesa"},{"@type":"City","name":"Chandler"},{"@type":"City","name":"Gilbert"},{"@type":"City","name":"Glendale"},{"@type":"City","name":"Peoria"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Concrete services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Foundations and slabs","description":"Footings, stem walls and slabs on grade for homes, garages and additions.","url":"foundations/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Driveways","description":"New pours and full tear-outs, sized and sloped so water leaves.","url":"driveways/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sidewalks and walkways","description":"Straight or curved, broom or stamped, with joints where cracks would be.","url":"sidewalks/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Patios and stamped concrete","description":"Color, pattern and texture for the part of the yard you actually use.","url":"patios/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Retaining walls and steps","description":"Poured walls and stairs that hold a slope and take foot traffic.","url":"retaining-walls/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Repair and replacement","description":"Cracked, sunken or stained concrete, fixed or taken out and redone.","url":"concrete-repair/"}}]}},{"@type":"Service","name":"Patios and stamped concrete","description":"A patio is where a yard becomes a room. Level Best Concrete pours plain, colored, stamped and exposed-aggregate patios across the Phoenix valley, sized and sloped so they stay comfortable and drain properly.","provider":{"@id":"#business"},"areaServed":[{"@type":"City","name":"Phoenix"},{"@type":"City","name":"Scottsdale"},{"@type":"City","name":"Tempe"},{"@type":"City","name":"Mesa"},{"@type":"City","name":"Chandler"},{"@type":"City","name":"Gilbert"},{"@type":"City","name":"Glendale"},{"@type":"City","name":"Peoria"}],"serviceType":"Patios and stamped concrete"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does stamped concrete last?","acceptedAnswer":{"@type":"Answer","text":"A properly built stamped patio can last for many years. Resealing every few years keeps the color and pattern looking fresh."}},{"@type":"Question","name":"Can you add color to concrete?","acceptedAnswer":{"@type":"Answer","text":"Yes. Color can be mixed in, applied to the surface, or both. We show you samples in your own light before you choose."}},{"@type":"Question","name":"Is stamped concrete slippery?","acceptedAnswer":{"@type":"Answer","text":"It can be when wet, so we choose textures and a sealer with grip for areas around pools and steps."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"/"},{"@type":"ListItem","position":2,"name":"Services","item":"#services"},{"@type":"ListItem","position":3,"name":"Patios","item":"patios/"}]}]}</script>
+
+</head>
+<body class="page-service">
+
+<span data-sc-progress></span>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar" id="bar">
+  <a class="bar__brand" href="../#top" aria-label="Level Best Concrete, home">
+    
+    <span class="mark" aria-hidden="true">L</span>
+    <span class="bar__name">Level Best Concrete</span>
+  </a>
+  <nav class="bar__links" id="bar-links" aria-label="Main">
+    <a href="../#services">Services</a>
+    <a href="../#work">Our Work</a>
+    <a href="../#about">About</a>
+    <a href="../#area">Service Area</a>
+  </nav>
+  <div class="bar__actions">
+    <a class="bar__phone" href="tel:+14805550142" aria-label="Call (480) 555-0142">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 3h3l1.4 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span>(480) 555-0142</span>
+    </a>
+    <button class="btn btn--sm" type="button" data-open-form>Free Estimate</button>
+    <button class="bar__menu" type="button" aria-expanded="false" aria-controls="bar-links" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+
+<main id="main">
+
+<!-- ------------------------------------------------------------ top -->
+<section class="sp-hero" id="top">
+  <div class="sc-wrap sp-hero__grid">
+    <div class="sp-hero__text sc-stack" data-sc-in data-sc-stagger="70">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="../">Home</a><span aria-hidden="true">/</span><a href="../#services">Services</a><span aria-hidden="true">/</span><span aria-current="page">Patios</span>
+      </nav>
+      <h1 class="sp-hero__h1">Concrete patio and stamped concrete contractor in Phoenix, AZ</h1>
+      <p class="sp-hero__intro">A patio is where a yard becomes a room. Level Best Concrete pours plain, colored, stamped and exposed-aggregate patios across the Phoenix valley, sized and sloped so they stay comfortable and drain properly.</p>
+      <div class="cta-row">
+        <button class="btn btn--lg" type="button" data-open-form>Free Estimate</button>
+        <a class="btn btn--lg btn--ghost" href="tel:+14805550142">Call (480) 555-0142</a>
+      </div>
+    </div>
+    <figure class="sp-hero__photo" data-sc-in>
+      <img src="../assets/work-patio.webp" alt="Stamped concrete patio in a slate pattern with a fire pit table and four chairs" width="1500" height="900" fetchpriority="high" decoding="async">
+      <figcaption>Stamped slate patio<span>Scottsdale</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="trust" aria-label="Credentials">
+  <div class="sc-wrap"><ul class="trust__list">
+  <li>Licensed, bonded and insured</li><li>Lic. #000000</li><li>Free written estimates</li>
+</ul>
+</div>
+</section>
+
+<!-- ------------------------------------------------------ what we do -->
+<section class="sp-block sc-section" id="what-we-do">
+  <div class="sc-wrap sp-two">
+    <div class="sc-stack" data-sc-in data-sc-stagger="70">
+      <h2 class="sc-display sc-display--md">What's included.</h2>
+      <p class="sc-body">A patio looks simple, but the details decide how it ages: slope away from the house, joints that follow the layout, a finish that is not slick when wet, and a sealer that matches the surface. We talk through color and pattern with samples before anything is poured.</p>
+    </div>
+    <ul class="ticks" data-sc-in>
+      
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Broom-finish, colored and stamped patios</span></li>
+      
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Exposed aggregate and decorative borders</span></li>
+      
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Pads for fire pits, outdoor kitchens and hot tubs, built with the right base and steel</span></li>
+      
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Steps and walkways that connect to the patio</span></li>
+      
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Sloped for drainage away from the house</span></li>
+      
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Sealing for color and stain protection</span></li>
+      
+    </ul>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------- process -->
+<section class="sp-steps sc-section" id="process">
+  <div class="sc-wrap">
+    <h2 class="sc-display sc-display--md" data-sc-in>How we do it.</h2>
+    <ol class="steps__list" data-sc-in data-sc-stagger="90">
+      
+      <li>
+        <span class="steps__n" aria-hidden="true">1</span>
+        <h3>Plan and choose</h3>
+        <p>We lay out the size, slope, color and pattern, and show you samples.</p>
+      </li>
+      
+      <li>
+        <span class="steps__n" aria-hidden="true">2</span>
+        <h3>Prep and form</h3>
+        <p>Excavate, compact the base, set forms and place steel for the load.</p>
+      </li>
+      
+      <li>
+        <span class="steps__n" aria-hidden="true">3</span>
+        <h3>Pour, color and stamp</h3>
+        <p>Place and finish, apply color, and stamp or texture while the surface is ready.</p>
+      </li>
+      
+      <li>
+        <span class="steps__n" aria-hidden="true">4</span>
+        <h3>Cure and seal</h3>
+        <p>Cure it slowly, then seal to protect the color and the surface.</p>
+      </li>
+      
+    </ol>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ signs -->
+<section class="sp-block sc-section" id="signs">
+  <div class="sc-wrap sp-two">
+    <div class="sc-stack" data-sc-in data-sc-stagger="70">
+      <h2 class="sc-display sc-display--md">When a new patio makes sense.</h2>
+      <p class="sc-body">If any of these sound familiar, the sooner someone looks at it the cheaper it usually is to fix.</p>
+      <button class="btn" type="button" data-open-form>Free Estimate</button>
+    </div>
+    <ul class="signs" data-sc-in>
+      <li>You want a patio, fire pit pad or outdoor kitchen</li><li>An old patio has cracked, sunk or stained</li><li>Water runs toward the house</li><li>The surface is slippery or crumbling</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------- work -->
+
+<section class="sp-work sc-section" id="work">
+  <div class="sc-wrap">
+    <h2 class="sc-display sc-display--md" data-sc-in>Recent work.</h2>
+    <div class="sp-gallery" data-sc-in>
+      
+      <figure>
+        <img src="../assets/work-patio.webp" alt="Stamped concrete patio in a slate pattern with a fire pit table and four chairs" loading="lazy" decoding="async" width="1500" height="900">
+        <figcaption>Stamped slate patio<span>Scottsdale</span></figcaption>
+      </figure>
+      
+      <figure>
+        <img src="../assets/work-walkway.webp" alt="Curved light-gray concrete walkway through a front garden to a front door" loading="lazy" decoding="async" width="1500" height="900">
+        <figcaption>Curved front walk<span>Tempe</span></figcaption>
+      </figure>
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- -------------------------------------------------------------- faq -->
+<section class="faq sc-section" id="faq">
+  <div class="sc-wrap faq__grid">
+    <h2 class="sc-display sc-display--md" data-sc-in>Patios questions.</h2>
+    <div class="faq__list" data-sc-in>
+      
+      <details>
+        <summary>How long does stamped concrete last?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>A properly built stamped patio can last for many years. Resealing every few years keeps the color and pattern looking fresh.</p>
+      </details>
+      
+      <details>
+        <summary>Can you add color to concrete?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>Yes. Color can be mixed in, applied to the surface, or both. We show you samples in your own light before you choose.</p>
+      </details>
+      
+      <details>
+        <summary>Is stamped concrete slippery?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>It can be when wet, so we choose textures and a sealer with grip for areas around pools and steps.</p>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------- related -->
+<section class="sp-related sc-section" id="related">
+  <div class="sc-wrap">
+    <h2 class="sc-display sc-display--md" data-sc-in>Other work we do.</h2>
+    <div class="sp-related__grid" data-sc-in data-sc-stagger="70">
+      
+      <a class="sp-rel" href="../sidewalks/">
+        <div class="svc__icon sp-rel__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M22 84C22 60 70 62 70 38S34 30 38 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="22" stroke="var(--sc-accent)"/><path d="M11 84C11 54 59 56 59 38S23 30 27 12M33 84C33 66 81 68 81 38S45 30 49 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/></svg></div>
+        <h3>Sidewalks and walkways</h3>
+        <p>Straight or curved, broom or stamped, with joints where cracks would be.</p>
+        <span class="svc__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <a class="sp-rel" href="../driveways/">
+        <div class="svc__icon sp-rel__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M38 16h20l22 64H16z" fill="var(--sc-accent)" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M48 30v8M48 48v10M48 66v8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><path d="M12 16h12M72 16h12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Driveways</h3>
+        <p>New pours and full tear-outs, sized and sloped so water leaves.</p>
+        <span class="svc__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <a class="sp-rel" href="../retaining-walls/">
+        <div class="svc__icon sp-rel__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M10 80V64h20V48h20V32h20V16h16v64z" fill="var(--sc-accent)" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M10 80h76" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Retaining walls and steps</h3>
+        <p>Poured walls and stairs that hold a slope and take foot traffic.</p>
+        <span class="svc__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+    </div>
+    <p class="sp-areas sc-body" data-sc-in>Serving Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Peoria and the surrounding area. <a href="../#area">See the service area</a>.</p>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ close -->
+<section id="contact" class="close close--page">
+  <div class="close__slab" aria-hidden="true"></div>
+  <div class="sc-wrap close__inner">
+    <div class="close__copy sc-stack" data-sc-in data-sc-stagger="80">
+      <h2 class="sc-display sc-display--lg close__h close__h--page">Ready for the patio you actually use?</h2>
+      <p class="sc-lede">Call us, or send the details and we&#39;ll call you within one business day.</p>
+      <div class="cta-row">
+        <a class="btn btn--lg" href="tel:+14805550142">Call (480) 555-0142</a>
+        <button class="btn btn--lg btn--ghost" type="button" data-open-form>Free Estimate</button>
+      </div>
+    </div>
+    <footer class="foot">
+  <div class="foot__brand">
+    
+    <span class="mark" aria-hidden="true">L</span>
+    <strong>Level Best Concrete</strong>
+    <p class="foot__tag">Concrete contractor serving the Phoenix valley.</p>
+  </div>
+  <div class="foot__col">
+    <h3>Services</h3>
+    <a href="../foundations/">Foundations</a><a href="../driveways/">Driveways</a><a href="../sidewalks/">Sidewalks</a><a href="../patios/">Patios</a><a href="../retaining-walls/">Retaining walls</a><a href="../concrete-repair/">Concrete repair</a>
+  </div>
+  <div class="foot__col">
+    <h3>Contact</h3>
+    <a href="tel:+14805550142">(480) 555-0142</a>
+    <a href="mailto:hello@levelbestconcrete.example">hello@levelbestconcrete.example</a>
+    
+    <span>Mon to Fri: 7:00 am to 5:00 pm</span><span>Saturday: 8:00 am to 12:00 pm</span><span>Sunday: Closed</span>
+  </div>
+  <div class="foot__col">
+    <h3>Credentials</h3>
+    <span>Lic. #000000</span>
+    <span>Licensed, bonded and insured</span>
+    <h3 class="foot__areas-h">Service area</h3>
+    <span>Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Peoria</span>
+  </div>
+  <p class="foot__fine">&copy; 2026 Level Best Concrete. All rights reserved.</p>
+</footer>
+
+  </div>
+</section>
+
+</main>
+
+<!-- phones only: the two actions that make money, always one thumb away -->
+<div class="callbar" role="group" aria-label="Contact Level Best Concrete">
+  <a class="callbar__call" href="tel:+14805550142">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 3h3l1.4 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+    Call now
+  </a>
+  <button class="callbar__quote" type="button" data-open-form>Free Estimate</button>
+</div>
+
+<dialog id="estimate" class="dlg" aria-labelledby="estimate-title">
+  <form class="dlg__form" method="post" action="#" novalidate data-demo="true">
+    <div class="dlg__top">
+      <div>
+        <p class="dlg__kicker">Work order</p>
+        <h2 class="dlg__title" id="estimate-title">Free Estimate</h2>
+        <p class="dlg__sub">Tell us about the job. We'll call you within one business day.</p>
+      </div>
+      <button class="dlg__x" type="button" data-close-form aria-label="Close form">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="dlg__grid">
+      <label class="fld"><span>Your name</span><input name="name" type="text" autocomplete="name" required></label>
+      <label class="fld"><span>Phone</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+      <label class="fld fld--wide"><span>Email <i>(optional)</i></span><input name="email" type="email" autocomplete="email"></label>
+      <label class="fld"><span>What needs pouring?</span>
+        <select name="project" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>Driveway</option><option>Foundation or slab</option><option>Patio</option><option>Sidewalk or walkway</option><option>Retaining wall or steps</option><option>Repair or replacement</option><option>Something else</option>
+        </select>
+      </label>
+      <label class="fld"><span>When?</span>
+        <select name="timeline">
+          <option>As soon as possible</option><option>Within a month</option><option>In the next few months</option><option>Just planning</option>
+        </select>
+      </label>
+      <label class="fld fld--wide"><span>Job address or city</span><input name="location" type="text" autocomplete="street-address"></label>
+      <label class="fld fld--wide"><span>Anything we should know? <i>(optional)</i></span><textarea name="message" rows="3"></textarea></label>
+    </div>
+
+    
+    <input type="hidden" name="_subject" value="New estimate request from the Level Best Concrete website">
+    <input type="hidden" name="source_page" value="/patios/">
+    <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="dlg__foot">
+      <button class="btn btn--lg" type="submit">Send request</button>
+      <p class="dlg__status" role="status" aria-live="polite" data-form-status></p>
+    </div>
+  </form>
+</dialog>
+
+
+<script src="../scrollcraft.js"></script>
+<script src="../common.js"></script>
+</body>
+</html>
