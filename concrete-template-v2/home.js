@@ -10,6 +10,9 @@
 (function () {
   "use strict";
 
+  // run each feature on its own, so an error in one can never stop the others from starting
+  function safe(name, fn) { try { fn(); } catch (err) { if (window.console) console.error("home.js " + name + ":", err); } }
+
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
@@ -19,7 +22,7 @@
   var pOf = function (el) { return el ? parseFloat(el.style.getPropertyValue("--sc-p")) || 0 : 0; };
 
   /* ------------------------------------------------------------- 1. slab */
-  (function slab() {
+  safe("slab", function slab() {
     var cv = $("#slab"), hint = $("#hint");
     if (!cv || !cv.getContext) return;
     var ctx = cv.getContext("2d");
@@ -127,10 +130,10 @@
       })(t0);
     }
     function start() { paint(); requestAnimationFrame(frame); setTimeout(intro, reduce ? 0 : 600); }
-  })();
+  });
 
   /* -------------------------------------------------------------- 2. dive */
-  (function dive() {
+  safe("dive", function dive() {
     var hero = $("#top"), world = $("[data-world]"), dark = $("[data-dark]"), hint = $("#hint");
     if (!hero || !world || reduce) return;
     var lastKey = "";
@@ -152,10 +155,10 @@
       }
       requestAnimationFrame(loop);
     })();
-  })();
+  });
 
   /* ------------------------------------------------------- 3. pour clock */
-  (function clock() {
+  safe("clock", function clock() {
     var tag = $("[data-clock-tag]");
     if (!tag) return;
     var acts = { stakes: $("#stakes"), wrong: $("#wrong"), turn: $("#turn"), how: $("#how") };
@@ -203,10 +206,10 @@
       bar.style.transform = "scaleX(" + (text ? 1 : clamp(m / 90, 0, 1)).toFixed(3) + ")";
     }
     (function loop() { read(); requestAnimationFrame(loop); })();
-  })();
+  });
 
   /* ------------------------------------------------------ 4. wipe handle */
-  (function turnHandle() {
+  safe("turnHandle", function turnHandle() {
     var el = $("#turn");
     if (!el || reduce) return;
     (function loop() {
@@ -214,10 +217,10 @@
       el.style.setProperty("--turn-x", smooth((pOf(el) - 0.12) / (0.7 - 0.12)).toFixed(4));
       requestAnimationFrame(loop);
     })();
-  })();
+  });
 
   /* ------------------------------------------------------- 5. bubbles */
-  (function bubbles() {
+  safe("bubbles", function bubbles() {
     var box = $("[data-bubbles]");
     if (!box) return;
     var bubs = $$(".bub", box);
@@ -243,17 +246,33 @@
     bubs.forEach(function (b) {
       b.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") openOnly(b); });
       b.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") openOnly(null); });
-      // Focus opens a bubble for KEYBOARD users only. A tap also focuses the bubble, which used to
-      // open it and then let the tap's own click close it again, so touch looked dead.
+      // Focus opens a bubble for KEYBOARD users only. A tap also focuses the bubble, which would
+      // open it and then let the tap's own click close it again.
       b.addEventListener("focus", function () { if (b.matches(":focus-visible")) openOnly(b); });
       b.addEventListener("blur", function () { if (b.classList.contains("is-open")) openOnly(null); });
-      b.addEventListener("click", function (e) {
-        if (e.pointerType === "mouse") return;            // hover already handles the mouse
+
+      // Touch: act on pointerup. Do NOT trust click.pointerType: iOS Safari reports the click that
+      // follows a finger tap as "mouse", so a "ignore mouse clicks" rule drops every tap on iPhone.
+      var handledAt = 0;
+      b.addEventListener("pointerup", function (e) {
+        if (e.pointerType === "mouse") return;            // a real mouse is handled by hover above
+        handledAt = Date.now();
         openOnly(b.classList.contains("is-open") ? null : b);
         e.stopPropagation();
       });
-      b.addEventListener("keydown", function (e) { if (e.key === "Escape") { openOnly(null); b.blur(); } });
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();                              // never let the page-level click close it
+        if (Date.now() - handledAt < 700) return;         // this tap was already handled on pointerup
+        if (matchMedia("(hover: hover) and (pointer: fine)").matches) return;   // desktop mouse: hover owns it
+        openOnly(b.classList.contains("is-open") ? null : b);   // fallback if pointer events are missing
+      });
+      b.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { openOnly(null); b.blur(); }
+        if ((e.key === "Enter" || e.key === " ") && !b.classList.contains("is-open")) { e.preventDefault(); openOnly(b); }
+      });
     });
+    // a tap anywhere else closes the open bubble
+    document.addEventListener("pointerup", function (e) { if (e.pointerType !== "mouse" && !e.target.closest(".bub")) openOnly(null); });
     document.addEventListener("click", function () { openOnly(null); });
-  })();
+  });
 })();
