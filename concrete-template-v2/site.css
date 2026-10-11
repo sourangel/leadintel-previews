@@ -468,6 +468,7 @@ strong { font-weight: 600; }
   animation: bub-a 9s ease-in-out infinite alternate;
   transition: opacity 260ms var(--sc-ease-out);
 }
+.bub { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 .bub__teaser {
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden;
   font-size: 0.8rem; line-height: 1.28; font-weight: 500; letter-spacing: 0; color: var(--sc-ink);

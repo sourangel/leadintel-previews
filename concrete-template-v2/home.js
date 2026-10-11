@@ -243,8 +243,10 @@
     bubs.forEach(function (b) {
       b.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") openOnly(b); });
       b.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") openOnly(null); });
-      b.addEventListener("focus", function () { openOnly(b); });
-      b.addEventListener("blur", function () { openOnly(null); });
+      // Focus opens a bubble for KEYBOARD users only. A tap also focuses the bubble, which used to
+      // open it and then let the tap's own click close it again, so touch looked dead.
+      b.addEventListener("focus", function () { if (b.matches(":focus-visible")) openOnly(b); });
+      b.addEventListener("blur", function () { if (b.classList.contains("is-open")) openOnly(null); });
       b.addEventListener("click", function (e) {
         if (e.pointerType === "mouse") return;            // hover already handles the mouse
         openOnly(b.classList.contains("is-open") ? null : b);
