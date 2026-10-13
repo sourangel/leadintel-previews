@@ -535,6 +535,12 @@ button { font: inherit; color: inherit; }
 .foot__col h2:not(:first-child) { margin-top: var(--s-4); }
 .foot__col a { text-decoration: none; min-height: 2.2rem; display: inline-flex; align-items: center; word-break: break-word; }
 @media (hover: hover) and (pointer: fine) { .foot__col a:hover, .foot__nap a:hover { color: var(--gold-hi); } }
+/* footer social: one round icon per profile instead of long links */
+.foot__col .foot__social { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.1rem; }
+.foot__col .foot__social a { width: 2.6rem; height: 2.6rem; min-height: 0; padding: 0; justify-content: center; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); transition: color 0.2s, border-color 0.2s, background 0.2s; }
+.foot__social svg { width: 1.2rem; height: 1.2rem; display: block; }
+@media (hover: hover) and (pointer: fine) { .foot__col .foot__social a:hover { color: var(--gold-hi); border-color: var(--line-gold); background: rgba(213, 176, 92, 0.08); } }
+.foot__col .foot__social a:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 2px; }
 .foot__fine { width: min(74rem, 100%); margin: var(--s-6) auto 0; padding-top: var(--s-4); border-top: 1px solid var(--line); color: var(--ink-dim); font-size: 0.8125rem; }
 
 .callbar { display: none; }
