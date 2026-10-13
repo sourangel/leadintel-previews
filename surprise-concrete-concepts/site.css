@@ -569,6 +569,12 @@ strong { font-weight: 600; }
 .foot__col a, .foot__col span { overflow-wrap: anywhere; }
 @media (max-width: 480px) { .foot { grid-template-columns: 1fr; } }
 @media (hover: hover) and (pointer: fine) { .foot__col a:hover { text-decoration: underline; } }
+/* footer social: one round icon per profile instead of long links */
+.foot__social { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.3rem; }
+.foot__social a { width: 2.6rem; height: 2.6rem; display: grid; place-items: center; border: 1px solid hsl(0 0% 100% / 0.22); border-radius: 999px; color: #E4E6E9; text-decoration: none; transition: color 0.2s, border-color 0.2s, background 0.2s; }
+.foot__social svg { width: 1.2rem; height: 1.2rem; display: block; }
+@media (hover: hover) and (pointer: fine) { .foot__social a:hover { color: var(--sc-accent); border-color: var(--sc-accent); background: hsl(0 0% 100% / 0.06); } }
+.foot__social a:focus-visible { outline: 2px solid var(--sc-accent); outline-offset: 2px; }
 .foot__fine { grid-column: 1 / -1; margin: 0.6rem 0 0; padding-top: 1.1rem; padding-bottom: 7.5rem; border-top: 1px solid hsl(0 0% 100% / 0.14); color: #BBBFC4; font-size: var(--sc-t-xs); }
 @media (max-width: 860px) { .foot { grid-template-columns: 1fr 1fr; } .foot__brand { grid-column: 1 / -1; } .foot__fine { padding-bottom: 5.5rem; } }
 
