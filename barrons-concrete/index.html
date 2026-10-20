@@ -1,0 +1,558 @@
+<!doctype html>
+<!--
+  Concrete contractor template, V2 home page. Rendered by build.mjs.
+  Structure: src/home.html and src/partials/. Content: business.json.
+  Do not edit scrollcraft.js or scrollcraft.css: that is the engine.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barron&#39;s Concrete | Concrete contractor in Tucson, AZ</title>
+<meta name="description" content="Barron&#39;s Concrete pours slabs, foundations, walls, driveways and decorative concrete in Tucson and Pima County. Free estimates.">
+<meta name="robots" content="noindex,nofollow">
+
+<meta name="theme-color" content="#E8E6E1">
+<meta property="og:title" content="Barron&#39;s Concrete | Concrete contractor in Tucson, AZ">
+<meta property="og:description" content="Barron&#39;s Concrete pours slabs, foundations, walls, driveways and decorative concrete in Tucson and Pima County. Free estimates.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Barron&#39;s Concrete">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%23FF5A1F'/><path d='M9 22V10h5.5c3 0 4.5 1.4 4.5 3.6 0 1.5-.8 2.6-2.2 3.1L19.5 22h-3l-2.2-4.6H12V22z' fill='%2316181B'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Geist:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="scrollcraft.css">
+<link rel="stylesheet" href="site.css">
+<style>:root{--sc-canvas:#E8E6E1;--sc-surface:#F4F3EF;--sc-ink:#16181B;--sc-ink-soft:#4C5258;--sc-accent:#2FAF57;--sc-accent-ink:#16181B;--pf-dark:#17191C;--sc-font-display:"Bricolage Grotesque", "Geist", system-ui, sans-serif;--sc-font-text:"Geist", system-ui, sans-serif;}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"GeneralContractor","@id":"#business","name":"Barron's Concrete","description":"Barron's Concrete pours slabs, foundations, walls, driveways and decorative concrete in Tucson and Pima County. Free estimates.","telephone":"(520) 807-1498","email":"estimates@barronsconcrete.com","areaServed":[{"@type":"City","name":"Tucson"},{"@type":"City","name":"Vail"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Concrete services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Slabs & Foundations","description":"Footings, stem walls and slabs on grade, for new construction and additions.","url":"slabs-foundations/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Concrete Walls","description":"Poured concrete walls, including retaining walls and structural walls.","url":"concrete-walls/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Decorative Concrete","description":"Colored, stained and finished concrete for patios, walkways and floors.","url":"decorative-concrete/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Complex Concrete Works","description":"Multi-phase and difficult jobs, planned, managed and built end to end.","url":"complex-concrete-works/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Stamped Concrete","description":"Concrete stamped to look like stone, slate, brick or wood.","url":"stamped-concrete/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Driveways","description":"New concrete driveways and replacements, sized and sloped so water leaves.","url":"driveways/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Exposed Aggregate","description":"A textured, slip-resistant surface made by exposing the stone in the concrete.","url":"exposed-aggregate/"}}]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long until I can walk or drive on it?","acceptedAnswer":{"@type":"Answer","text":"Most slabs take foot traffic after about a day or two. Cars and light trucks usually wait around a week. Concrete keeps gaining strength for roughly 28 days, so ask for dates on your job."}},{"@type":"Question","name":"Can you pour in Tucson summer heat?","acceptedAnswer":{"@type":"Answer","text":"Yes, with a plan. Big pours usually start early in the morning, and the surface has to be kept from drying too fast in 100 degree weather."}},{"@type":"Question","name":"Do you do residential and commercial work?","acceptedAnswer":{"@type":"Answer","text":"Both. Barron's Concrete handles new construction, repairs and restorations, and occupied job sites."}},{"@type":"Question","name":"Do I need a permit?","acceptedAnswer":{"@type":"Answer","text":"It depends on the jurisdiction and the job. Foundations and structural work almost always do. Ask when you get your estimate."}},{"@type":"Question","name":"How do you price a job?","acceptedAnswer":{"@type":"Answer","text":"By area, thickness, prep, access and finish. Estimates are free."}},{"@type":"Question","name":"Should concrete be sealed?","acceptedAnswer":{"@type":"Answer","text":"For most patios, driveways and decorative surfaces, yes. A sealer slows staining and wear and needs to be reapplied from time to time in Arizona sun."}}]}]}</script>
+
+</head>
+<body>
+
+<span data-sc-progress></span>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar" id="bar">
+  <a class="bar__brand" href="#top" aria-label="Barron&#39;s Concrete, home">
+    
+    <span class="mark" aria-hidden="true">B</span>
+    <span class="bar__name">Barron&#39;s Concrete</span>
+  </a>
+  <nav class="bar__links" id="bar-links" aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#about">About</a>
+    <a href="#area">Service Area</a>
+  </nav>
+  <div class="bar__actions">
+    <a class="bar__phone" href="tel:+15208071498" aria-label="Call (520) 807-1498">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 3h3l1.4 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span>(520) 807-1498</span>
+    </a>
+    <button class="btn btn--sm" type="button" data-open-form>Free Estimate</button>
+    <button class="bar__menu" type="button" aria-expanded="false" aria-controls="bar-links" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+
+<!-- the pour clock: the signature element, driven from scroll in home.js -->
+<aside class="tag" aria-hidden="true" data-clock-tag>
+  <span class="tag__label">Workable time <i>example</i></span>
+  <span class="tag__time" data-clock-time>90:00</span>
+  <span class="tag__bar"><span data-clock-bar></span></span>
+  <span class="tag__state" data-clock-state>Truck's on site</span>
+</aside>
+
+<main id="main">
+
+<!-- =============================================================== 1 HERO
+     Delight, then free fall. An aerial of a big formed slab on a real jobsite.
+     You trowel it. Scrolling dives the drone straight into it and the screen
+     goes dark, which is where the 90 minute countdown begins. -->
+<section id="top" class="hero" data-sc-act="pin" data-sc-span="4.20" aria-label="Introduction">
+  <div data-sc-stage class="hero__stage">
+    <img class="hero__fill" src="assets/hero-aerial.webp" alt="" aria-hidden="true" width="2400" height="1333">
+    <div class="hero__world" data-world>
+      <img class="hero__plate" src="assets/hero-aerial.webp" alt="Aerial view of a large concrete slab formed on a jobsite, with mixer and pump trucks standing by" width="2400" height="1333" fetchpriority="high">
+      <canvas id="slab" class="hero__slab" width="1400" height="708" role="img" aria-label="A freshly poured concrete slab. Drag across it to finish it with a trowel."></canvas>
+      <div class="hero__cloud" aria-hidden="true"></div>
+    </div>
+    <div class="hero__dark" data-dark aria-hidden="true"></div>
+    <p class="hero__hint" id="hint" aria-hidden="true">
+      <span class="hint--fine">Grab the trowel. Drag across the slab.</span>
+      <span class="hint--touch">Swipe across the slab to finish it.</span>
+    </p>
+    <div class="hero__copy" data-sc-cue="0 0.2 0 0.12" data-sc-rise="0">
+      <h1 class="hero__h1">Concrete doesn&#39;t do second chances.</h1>
+      <p class="hero__sub">Barron&#39;s Concrete pours slabs, foundations, walls and decorative concrete across Tucson and Pima County. Residential and commercial.</p>
+      <div class="cta-row">
+        <a class="btn btn--ghost-light" href="tel:+15208071498">Call (520) 807-1498</a>
+        <button class="btn" type="button" data-open-form>Free Estimate</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 2 STAKES
+     Pressure. Pure dark, continuous with the dive. The clock starts draining. -->
+<section id="stakes" class="ground-dark" data-sc-act="pin" data-sc-span="3.90" aria-label="Why concrete is unforgiving">
+  <div data-sc-stage class="stakes">
+    <div class="stakes__clock" aria-hidden="true"><span data-clock-time>90:00</span></div>
+    <div class="stakes__lines sc-wrap">
+      <p class="stakes__line" data-sc-cue="0 0.30 0 0.08">A truck of concrete gives you about ninety minutes.</p>
+      <p class="stakes__line" data-sc-cue="0.26 0.56">Then it starts to set. No undo. No second pour.</p>
+      <p class="stakes__line stakes__line--soft" data-sc-cue="0.52 0.80">Skip the prep, add a little water, rush the finish, and you'll see it in the cracks for years.</p>
+      <p class="stakes__line stakes__line--big" data-sc-cue="0.72 0.98 0.06 0.02" data-sc-kinetic="lines">This is not a weekend project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== 3 WRONG CREW
+     Dread. Your driveway, poured in a hurry. Mistakes named as they happen. -->
+<section id="wrong" class="ground-dark" data-sc-act="scrub" data-sc-span="3.90" data-sc-dwell="0.3" aria-label="What a rushed driveway pour looks like">
+  <div data-sc-stage>
+    <picture>
+      <source media="(max-width: 860px)" srcset="assets/wrong-drive-poster-m.webp">
+      <img class="sc-stage__poster" src="assets/wrong-drive-poster.webp" alt="" width="1920" height="1065">
+    </picture>
+    <video data-sc-scrub data-sc-src="assets/wrong-drive.mp4" data-sc-src-mobile="assets/wrong-drive-m.mp4" muted playsinline aria-hidden="true"></video>
+    <img class="pf-end" src="assets/turn-wrong.webp" alt="A rushed driveway pour: cracked, puddled concrete in crooked forms in front of a garage" width="2000" height="1125">
+    <div class="sc-scrim sc-scrim--left" aria-hidden="true"></div>
+    <div class="callouts">
+      <div class="callout" data-sc-cue="0 0.30 0 0.08">
+        <p class="callout__tag">The rushed driveway</p>
+        <h2 class="callout__h">Water on the base, a hose in the form.</h2>
+        <p class="callout__p">A wet, loose base settles. The slab on top of it follows.</p>
+      </div>
+      <div class="callout" data-sc-cue="0.26 0.56">
+        <h2 class="callout__h">Soupy mix, poured fast.</h2>
+        <p class="callout__p">Extra water makes concrete easy to place and much weaker once it cures.</p>
+      </div>
+      <div class="callout" data-sc-cue="0.52 0.80">
+        <h2 class="callout__h">Then the cracks show up.</h2>
+        <p class="callout__p">No steel, no planned joints, so the slab picks its own places to break.</p>
+      </div>
+      <div class="callout" data-sc-cue="0.74 0.98 0.06 0.02">
+        <h2 class="callout__h">And then comes the teardown bill.</h2>
+        <p class="callout__p">Breaking out and re-pouring costs more than doing it right once.</p>
+        <p class="sticker" aria-hidden="true">Set too soon</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ 4 TURN
+     Relief. Same driveway, same house, same camera. A wipe is a change of state. -->
+<section id="turn" class="turn" data-sc-act="pin" data-sc-span="3.45" aria-label="The same driveway, rushed compared with done right">
+  <div data-sc-stage class="turn__stage">
+    <div class="turn__imgs">
+      <img class="turn__a" src="assets/turn-wrong.webp" alt="The driveway poured in a hurry: cracked, puddled and crumbling at the edges" width="2000" height="1125">
+      <figure class="turn__b" data-sc-reveal="right" data-sc-reveal-at="0.12 0.7">
+        <img src="assets/turn-right.webp" alt="The same driveway poured properly: level, smooth, with clean joints and straight edges" width="2000" height="1125">
+      </figure>
+      <div class="turn__edge" aria-hidden="true"><span>&#8596;</span></div>
+      <div class="sc-scrim sc-scrim--band" aria-hidden="true"></div>
+      <h2 class="turn__q" data-sc-cue="0.70 0.98 0.08 0.02">Same driveway. Which crew do you want?</h2>
+    </div>
+    <div class="turn__caps" aria-hidden="true"><span>Rushed</span><span>Done right</span></div>
+  </div>
+</section>
+
+<!-- ================================================== 5 RIGHT CREW  (PEAK)
+     Awe, then confidence. Stops on an empty foundation; scrolling pours it. -->
+<section id="how" class="ground-dark" data-sc-act="scrub" data-sc-span="6.60" data-sc-dwell="0.3" aria-label="The right way to pour a foundation">
+  <div data-sc-stage>
+    <picture>
+      <source media="(max-width: 860px)" srcset="assets/found-poster-m.webp">
+      <img class="sc-stage__poster" src="assets/found-poster.webp" alt="" width="1920" height="1065">
+    </picture>
+    <video data-sc-scrub data-sc-src="assets/found.mp4" data-sc-src-mobile="assets/found-m.mp4" muted playsinline aria-hidden="true"></video>
+    <img class="pf-end" src="assets/work-foundation.webp" alt="A finished foundation slab, level and smooth" width="1500" height="844">
+    <div class="sc-scrim sc-scrim--left" aria-hidden="true"></div>
+    <div class="callouts callouts--list" data-sc-cue="0 0.96 0 0.04">
+      <p class="callout__tag">The right way</p>
+      <h2 class="callout__h callout__h--lg">Same job. Done by pros.</h2>
+      <ul class="standards">
+        <li style="--at:0.14;--next:0.26"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Compacted gravel base, graded to drain</li>
+        <li style="--at:0.26;--next:0.38"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Rebar on chairs, so steel sits where it belongs</li>
+        <li style="--at:0.38;--next:0.5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Mix ordered for the job. No water added on site</li>
+        <li style="--at:0.5;--next:0.62"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Placed, screeded and floated on schedule</li>
+        <li style="--at:0.62;--next:1.2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Joints cut and the slab cured, not left to chance</li>
+      </ul>
+    </div>
+    <p class="finale" data-sc-cue="0.74 0.98 0.06 0.02">Poured right. On schedule.</p>
+  </div>
+</section>
+
+<!-- ============================================================ TRUST
+     Proof, right after the emotional peak. Only items the client can stand behind. -->
+<section class="trust" aria-label="Credentials">
+  <div class="sc-wrap"><ul class="trust__list">
+  <li>Licensed, bonded and insured</li><li>ROC #201385</li><li>Free estimates</li><li>Residential and commercial</li>
+</ul>
+</div>
+</section>
+
+<!-- ============================================================ 6 SERVICES
+     Curiosity. Lateral travel reads as range. Every card is a real page. -->
+<section id="services" class="services" data-sc-act="pan" data-sc-span="6.60" aria-label="Services">
+  <div data-sc-stage class="services__stage">
+    <div class="rail" data-sc-pan="0.05">
+      <div class="rail__lead">
+        <h2 class="sc-display sc-display--lg">What we pour.</h2>
+        <p class="sc-lede">Residential and commercial. Pick one to see how we do it.</p>
+      </div>
+      
+      <a class="svc" href="slabs-foundations/" data-sc-tilt="5" aria-label="Slabs &amp; Foundations: Footings, stem walls and slabs on grade, for new construction and additions.">
+        <div class="svc__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M14 44 48 18l34 26" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="22" y="44" width="52" height="16" rx="3" fill="var(--sc-accent)" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M10 74h76M10 84h76" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 66v18M48 66v18M66 66v18" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/></svg></div>
+        <h3 class="svc__h">Slabs &amp; Foundations</h3>
+        <p class="svc__p">Footings, stem walls and slabs on grade, for new construction and additions.</p>
+        <span class="svc__more">See how we do it <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <a class="svc" href="concrete-walls/" data-sc-tilt="5" aria-label="Concrete Walls: Poured concrete walls, including retaining walls and structural walls.">
+        <div class="svc__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M18 16h60v64H18z" fill="var(--sc-accent)" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M18 36h60M18 58h60M42 16v20M66 36v22M30 58v22" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/></svg></div>
+        <h3 class="svc__h">Concrete Walls</h3>
+        <p class="svc__p">Poured concrete walls, including retaining walls and structural walls.</p>
+        <span class="svc__more">See how we do it <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <a class="svc" href="decorative-concrete/" data-sc-tilt="5" aria-label="Decorative Concrete: Colored, stained and finished concrete for patios, walkways and floors.">
+        <div class="svc__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><rect x="12" y="20" width="72" height="56" rx="4" fill="var(--sc-accent)" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M12 48h72M36 20v56M60 20v56" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M24 34l8 8M48 62l8 8M68 30l8 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/></svg></div>
+        <h3 class="svc__h">Decorative Concrete</h3>
+        <p class="svc__p">Colored, stained and finished concrete for patios, walkways and floors.</p>
+        <span class="svc__more">See how we do it <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <a class="svc" href="complex-concrete-works/" data-sc-tilt="5" aria-label="Complex Concrete Works: Multi-phase and difficult jobs, planned, managed and built end to end.">
+        <div class="svc__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M14 66h68v14H14z" fill="var(--sc-accent)" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M26 66 62 24l14 12-30 30" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M62 24l-6-8 14-6 6 12z" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/></svg></div>
+        <h3 class="svc__h">Complex Concrete Works</h3>
+        <p class="svc__p">Multi-phase and difficult jobs, planned, managed and built end to end.</p>
+        <span class="svc__more">See how we do it <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <a class="svc" href="stamped-concrete/" data-sc-tilt="5" aria-label="Stamped Concrete: Concrete stamped to look like stone, slate, brick or wood.">
+        <div class="svc__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M14 36h68l8 40H6z" fill="var(--sc-accent)" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M33 36 28 76M52 36v40M71 36l5 40M10 56h76" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="48" cy="22" r="8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 class="svc__h">Stamped Concrete</h3>
+        <p class="svc__p">Concrete stamped to look like stone, slate, brick or wood.</p>
+        <span class="svc__more">See how we do it <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <a class="svc" href="driveways/" data-sc-tilt="5" aria-label="Driveways: New concrete driveways and replacements, sized and sloped so water leaves.">
+        <div class="svc__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M38 16h20l22 64H16z" fill="var(--sc-accent)" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M48 30v8M48 48v10M48 66v8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><path d="M12 16h12M72 16h12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 class="svc__h">Driveways</h3>
+        <p class="svc__p">New concrete driveways and replacements, sized and sloped so water leaves.</p>
+        <span class="svc__more">See how we do it <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <a class="svc" href="exposed-aggregate/" data-sc-tilt="5" aria-label="Exposed Aggregate: A textured, slip-resistant surface made by exposing the stone in the concrete.">
+        <div class="svc__icon"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M22 84C22 60 70 62 70 38S34 30 38 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="22" stroke="var(--sc-accent)"/><path d="M11 84C11 54 59 56 59 38S23 30 27 12M33 84C33 66 81 68 81 38S45 30 49 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/></svg></div>
+        <h3 class="svc__h">Exposed Aggregate</h3>
+        <p class="svc__p">A textured, slip-resistant surface made by exposing the stone in the concrete.</p>
+        <span class="svc__more">See how we do it <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      
+      <div class="rail__end">
+        <p class="sc-lede">Not sure which one you need?</p>
+        <button class="btn" type="button" data-open-form>Free Estimate</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== 8 WORK -->
+<section id="work" class="work sc-section">
+  <div class="sc-wrap">
+    <div class="work__head sc-stack" data-sc-in data-sc-stagger="70">
+      <h2 class="sc-display sc-display--lg">Our work.</h2>
+      <p class="sc-lede">A few recent pours. Ask us for more near you.</p>
+    </div>
+    <div class="wall">
+      
+      <figure class="wall__i wall__i--1" data-sc-in>
+        <img src="assets/work-1.webp" alt="Finished concrete slab on grade at a jobsite with forms and desert mountains behind" loading="lazy" decoding="async" width="1500" height="900">
+        <figcaption>Finished slab<span></span></figcaption>
+      </figure>
+      
+      <figure class="wall__i wall__i--2" data-sc-in>
+        <img src="assets/work-2.webp" alt="Poured concrete wall with forms stripped on a sloped desert lot" loading="lazy" decoding="async" width="1500" height="900">
+        <figcaption>Concrete wall<span></span></figcaption>
+      </figure>
+      
+      <figure class="wall__i wall__i--3" data-sc-in>
+        <img src="assets/work-3.webp" alt="Concrete pump boom placing a slab at a commercial jobsite" loading="lazy" decoding="async" width="1500" height="900">
+        <figcaption>Pump pour on a slab<span></span></figcaption>
+      </figure>
+      
+      <figure class="wall__i wall__i--4" data-sc-in>
+        <img src="assets/work-4.webp" alt="New concrete flatwork with a wood form around a pole base" loading="lazy" decoding="async" width="1500" height="900">
+        <figcaption>Flatwork and forms<span></span></figcaption>
+      </figure>
+      
+      <figure class="wall__i wall__i--5" data-sc-in>
+        <img src="assets/work-5.webp" alt="Footing trenches dug for a foundation with a mini excavator and mountains behind" loading="lazy" decoding="async" width="1500" height="900">
+        <figcaption>Footings dug and ready<span></span></figcaption>
+      </figure>
+      
+      <figure class="wall__i wall__i--6" data-sc-in>
+        <img src="assets/work-6.webp" alt="Poured concrete walls and slab at a jobsite" loading="lazy" decoding="async" width="1500" height="900">
+        <figcaption>Walls and slab<span></span></figcaption>
+      </figure>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== 9 WHY + ABOUT -->
+<section id="why" class="why sc-section">
+  <div class="sc-wrap why__grid">
+    <div class="why__head sc-stack" data-sc-in data-sc-stagger="70">
+      <h2 class="sc-display sc-display--lg">How we keep it honest.</h2>
+      <p class="sc-lede">Concrete is hard to judge until it's too late to change. So we put the important parts in front of you early.</p>
+    </div>
+    <ol class="why__list">
+      
+      <li data-sc-in>
+        <h3>Free estimates.</h3>
+        <p>Call or send the details and we will set up your estimate.</p>
+      </li>
+      
+      <li data-sc-in>
+        <h3>Done right the first time.</h3>
+        <p>That is the standard Barron&#39;s Concrete holds itself to on every job, residential and commercial.</p>
+      </li>
+      
+      <li data-sc-in>
+        <h3>Licensed, bonded and insured.</h3>
+        <p>ROC #201385.</p>
+      </li>
+      
+      <li data-sc-in>
+        <h3>Straight dealing.</h3>
+        <p>Honesty, integrity and clear communication on budget, schedule and on-site work.</p>
+      </li>
+      
+    </ol>
+  </div>
+</section>
+
+<section id="about" class="about sc-section">
+  <div class="sc-wrap about__grid">
+    <figure class="about__photo" data-sc-reveal="up" data-sc-reveal-at="0.15 0.5">
+      <img src="assets/work-5.webp" alt="Footing trenches dug for a foundation" loading="lazy" decoding="async" width="1500" height="844">
+    </figure>
+    <div class="about__text sc-stack" data-sc-in data-sc-stagger="70">
+      <h2 class="sc-display sc-display--md">Family owned and operated in Tucson.</h2>
+      <p class="sc-body">Barron&#39;s Concrete is a family owned and operated concrete contractor in Tucson, doing both commercial and residential work: new construction, repairs and restorations.</p><p class="sc-body">Occupied and fully operating job sites are not a problem, and multi-phase jobs can be planned, managed and built. Residential work ranges from driveways and patios to basketball courts and barbecue grills.</p>
+      <dl class="facts">
+        <div><dt>License</dt><dd>ROC #201385</dd></div><div><dt>Coverage</dt><dd>Licensed, bonded and insured</dd></div><div><dt>Work</dt><dd>Residential and commercial</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= 10 SERVICE AREA -->
+<section id="area" class="area sc-section">
+  <div class="sc-wrap area__grid">
+    <div class="area__text sc-stack" data-sc-in data-sc-stagger="70">
+      <h2 class="sc-display sc-display--md">Where we work.</h2>
+      <p class="sc-body">Serving Tucson and Pima County and the towns around it.</p>
+      <ul class="towns">
+        <li>Tucson</li><li>Vail</li>
+      </ul>
+      <p class="sc-body">Not on the list? Call. We will tell you straight whether we can take the job.</p>
+      <a class="btn btn--ghost" href="tel:+15208071498">Call (520) 807-1498</a>
+    </div>
+    <div class="area__map" data-sc-in>
+      <iframe title="Map of the Barron&#39;s Concrete service area" src="https://www.google.com/maps?q=Tucson%2C%20AZ&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 11 REVIEWS
+     Bubbles drifting like they're sitting in water. Hover one and it opens. -->
+
+
+<!-- ======================================================= 12 HOW IT WORKS -->
+<section id="steps" class="steps sc-section">
+  <div class="sc-wrap">
+    <h2 class="sc-display sc-display--md" data-sc-in>Booking is simple.</h2>
+    <ol class="steps__list" data-sc-in data-sc-stagger="90">
+      
+      <li>
+        <span class="steps__n" aria-hidden="true">1</span>
+        <h3>Call or send the form</h3>
+        <p>Tell us what you want poured and where.</p>
+      </li>
+      
+      <li>
+        <span class="steps__n" aria-hidden="true">2</span>
+        <h3>Free estimate</h3>
+        <p>We look at the job and talk through scope and budget.</p>
+      </li>
+      
+      <li>
+        <span class="steps__n" aria-hidden="true">3</span>
+        <h3>Plan the work</h3>
+        <p>Schedule, access and finish are settled before we start.</p>
+      </li>
+      
+      <li>
+        <span class="steps__n" aria-hidden="true">4</span>
+        <h3>We pour and finish</h3>
+        <p>Prep, forms, pour, finish and cure, then a walkthrough with you.</p>
+      </li>
+      
+    </ol>
+  </div>
+</section>
+
+<!-- ================================================================ 13 FAQ -->
+<section id="faq" class="faq sc-section">
+  <div class="sc-wrap faq__grid">
+    <h2 class="sc-display sc-display--md" data-sc-in>Questions we hear a lot.</h2>
+    <div class="faq__list" data-sc-in>
+      
+      <details>
+        <summary>How long until I can walk or drive on it?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>Most slabs take foot traffic after about a day or two. Cars and light trucks usually wait around a week. Concrete keeps gaining strength for roughly 28 days, so ask for dates on your job.</p>
+      </details>
+      
+      <details>
+        <summary>Can you pour in Tucson summer heat?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>Yes, with a plan. Big pours usually start early in the morning, and the surface has to be kept from drying too fast in 100 degree weather.</p>
+      </details>
+      
+      <details>
+        <summary>Do you do residential and commercial work?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>Both. Barron&#39;s Concrete handles new construction, repairs and restorations, and occupied job sites.</p>
+      </details>
+      
+      <details>
+        <summary>Do I need a permit?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>It depends on the jurisdiction and the job. Foundations and structural work almost always do. Ask when you get your estimate.</p>
+      </details>
+      
+      <details>
+        <summary>How do you price a job?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>By area, thickness, prep, access and finish. Estimates are free.</p>
+      </details>
+      
+      <details>
+        <summary>Should concrete be sealed?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>For most patios, driveways and decorative surfaces, yes. A sealer slows staining and wear and needs to be reapplied from time to time in Arizona sun.</p>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ 14 CLOSE
+     Calm. Light, settled, finished. The clock reads CURED. -->
+<section id="contact" class="close">
+  <div class="close__slab" aria-hidden="true"></div>
+  <div class="sc-wrap close__inner">
+    <div class="close__copy sc-stack" data-sc-in data-sc-stagger="80">
+      <h2 class="sc-display sc-display--xl close__h">Ready when you are.</h2>
+      <p class="sc-lede">Call us, or send the details and we&#39;ll call you to set up your free estimate.</p>
+      <div class="cta-row">
+        <a class="btn btn--lg" href="tel:+15208071498">Call (520) 807-1498</a>
+        <button class="btn btn--lg btn--ghost" type="button" data-open-form>Free Estimate</button>
+      </div>
+    </div>
+    <footer class="foot">
+  <div class="foot__brand">
+    
+    <span class="mark" aria-hidden="true">B</span>
+    <strong>Barron&#39;s Concrete</strong>
+    <p class="foot__tag">Concrete contractor serving Tucson and Pima County.</p>
+    
+  </div>
+  <div class="foot__col">
+    <h3>Services</h3>
+    <a href="slabs-foundations/">Slabs</a><a href="concrete-walls/">Walls</a><a href="decorative-concrete/">Decorative</a><a href="complex-concrete-works/">Complex works</a><a href="stamped-concrete/">Stamped</a><a href="driveways/">Driveways</a><a href="exposed-aggregate/">Aggregate</a>
+  </div>
+  <div class="foot__col">
+    <h3>Contact</h3>
+    <a href="tel:+15208071498">(520) 807-1498</a>
+    <a href="mailto:estimates@barronsconcrete.com">estimates@barronsconcrete.com</a>
+    
+    
+  </div>
+  <div class="foot__col">
+    <h3>Credentials</h3>
+    <span>ROC #201385</span>
+    <span>Licensed, bonded and insured</span>
+    <h3 class="foot__areas-h">Service area</h3>
+    <span>Tucson, Vail</span>
+  </div>
+  <p class="foot__fine">&copy; 2026 Barron&#39;s Concrete. All rights reserved.</p>
+</footer>
+
+  </div>
+</section>
+
+</main>
+
+<!-- phones only: the two actions that make money, always one thumb away -->
+<div class="callbar" role="group" aria-label="Contact Barron&#39;s Concrete">
+  <a class="callbar__call" href="tel:+15208071498">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 3h3l1.4 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+    Call now
+  </a>
+  <button class="callbar__quote" type="button" data-open-form>Free Estimate</button>
+</div>
+
+<dialog id="estimate" class="dlg" aria-labelledby="estimate-title">
+  <form class="dlg__form" method="post" action="#" novalidate data-demo="true">
+    <div class="dlg__top">
+      <div>
+        <p class="dlg__kicker">Work order</p>
+        <h2 class="dlg__title" id="estimate-title">Free Estimate</h2>
+        <p class="dlg__sub">Tell us about the job. We'll call you to set up your free estimate.</p>
+      </div>
+      <button class="dlg__x" type="button" data-close-form aria-label="Close form">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="dlg__grid">
+      <label class="fld"><span>Your name</span><input name="name" type="text" autocomplete="name" required></label>
+      <label class="fld"><span>Phone</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+      <label class="fld fld--wide"><span>Email <i>(optional)</i></span><input name="email" type="email" autocomplete="email"></label>
+      <label class="fld"><span>What needs pouring?</span>
+        <select name="project" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>Slabs &amp; Foundations</option><option>Concrete Walls</option><option>Decorative Concrete</option><option>Complex Concrete Works</option><option>Stamped Concrete</option><option>Driveways</option><option>Exposed Aggregate</option><option>Something else</option>
+        </select>
+      </label>
+      <label class="fld"><span>When?</span>
+        <select name="timeline">
+          <option>As soon as possible</option><option>Within a month</option><option>In the next few months</option><option>Just planning</option>
+        </select>
+      </label>
+      <label class="fld fld--wide"><span>Job address or city</span><input name="location" type="text" autocomplete="street-address"></label>
+      <label class="fld fld--wide"><span>Anything we should know? <i>(optional)</i></span><textarea name="message" rows="3"></textarea></label>
+    </div>
+
+    
+    <input type="hidden" name="_subject" value="New estimate request from the Barron&#39;s Concrete website">
+    <input type="hidden" name="source_page" value="/">
+    <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="dlg__foot">
+      <button class="btn btn--lg" type="submit">Send request</button>
+      <p class="dlg__status" role="status" aria-live="polite" data-form-status></p>
+    </div>
+  </form>
+</dialog>
+
+
+<script src="scrollcraft.js"></script>
+<script src="common.js"></script>
+<script src="home.js"></script>
+</body>
+</html>
